@@ -1,3 +1,11 @@
+/* Meccano Arduino library required
+ *  http://www.meccano.com/meccanoid-opensource
+ *  
+ *  Demo for 2 smart servos hooked to pin 5.
+ *  LeRoy Miller, 2017
+ *  Feel Free to use this for whatever.
+ */
+
 #include "MeccaBrain.h"
 
 MeccaBrain servo(5);
@@ -41,20 +49,20 @@ void loop(){
   servo.setServoColor(0, 0xF4);
   servo.setServoColor(1, 0xF2);
   
- for (int i=0; i<250; i++) {
+ for (int i=0; i<239; i++) {
 servo.communicate();
     servo.setServoPosition(0,i);
-    servo.setServoPosition(1, 250 - i);
+    servo.setServoPosition(1, 239 - i);
  }
 
 servo.communicate();
   servo.setServoColor(1, 0xF4);
   servo.setServoColor(0, 0xF2);
  
- for (int i=250; i>0; i--) {
+ for (int i=239; i>0; i--) {
   servo.communicate();
   servo.setServoPosition(0,i);
-  servo.setServoPosition(1,250 - i);
+  servo.setServoPosition(1,239 - i);
   
  }
 }
