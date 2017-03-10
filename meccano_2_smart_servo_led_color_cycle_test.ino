@@ -41,7 +41,11 @@ void setup() {
   // initialize serial communication:
   Serial.begin(9600);
  pinMode(5, OUTPUT);
- 
+
+ for (int i=0; i<51; i++) {
+servo.communicate();
+}
+
 }
  
 void loop(){
