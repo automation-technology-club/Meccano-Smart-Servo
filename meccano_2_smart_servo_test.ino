@@ -38,7 +38,7 @@ The byte POS refers to the servo position  0x00 - 0xEF, which equals to a full 1
 */
 
 //A STEP of 20 causes problems, it appears the servos need more power
-#define STEP 1 
+#define STEP 1
 /*This changes how fast the servo moves by changing how far it moves on each loop.
  * It has less to do with speed and more to do with position of the servo.
  * If you see weird issues, or your servos don't change color you probably
@@ -49,6 +49,10 @@ void setup() {
   // initialize serial communication:
   Serial.begin(9600);
  pinMode(5, OUTPUT);
+
+ for (int i=0; i<51; i++) {
+servo.communicate();
+}
  
 }
  
